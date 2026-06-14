@@ -1,60 +1,51 @@
-# Magist E-Commerce Data Analytics Portfolio
+# 🌍 Strategic Market Expansion: Eniac’s Brazil Entry & Magist Partnership Evaluation
+**Project Team:** The Missing Semicolons  
 
-## Project Overview
-This repository contains a comprehensive SQL analytics project focusing on **Magist**, a rapidly growing e-commerce platform. Using a relational database snapshot, this project explores core business operations across four key pillars: **business expansion, product portfolio alignment, seller performance, and supply chain logistics**. 
+## 📊 Business Case Overview (Fall 2018)
+It is the fall of 2018. **Eniac**, a premium Spanish online marketplace specializing in Apple hardware and luxury tech accessories, has recently gone public. Backed by intense investor pressure to aggressively scale globally, Eniac is evaluating a massive milestone: **entering the Brazilian e-commerce market**. 
 
-The goal of this analysis is to extract data-driven insights that help stakeholders understand Magist's market share in the high-value "Tech" sector, evaluate delivery fulfillment efficiency, and optimize seller operations.
-
----
-
-## Technical Skills Demonstrated
-* **Advanced Aggregations:** Multi-stage calculations using `COUNT(DISTINCT)`, `SUM`, and `AVG` to evaluate macro company trends.
-* **Conditional Aggregation:** Utilizing `CASE WHEN` statements natively inside aggregate functions to compute complex metrics (e.g., Tech vs. Non-Tech distributions) without relying on heavy subqueries.
-* **Multi-Table Joins:** Constructing clean relational bridges across up to five tables (`orders`, `order_items`, `products`, `sellers`, `product_category_name_translation`, `geo`) using explicit alias mapping.
-* **Window Functions:** Deploying `SUM() OVER()` to calculate categorical percentages relative to the company-wide total.
-* **Data Cleansing & Filtering:** Handling string matching, standardizing localized product category translations, and filtering null data blocks.
-* **Date-Time Analytics:** Working with `TIMESTAMPDIFF`, `DATE_FORMAT`, and `DATEDIFF` to track calendar timelines and measure delivery speeds.
+Eniac’s core differentiator is a personalized, human-first tech support model driven by a high-touch customer culture. Expanding across South America while maintaining this premium brand identity is an immense operational challenge. To mitigate supply chain and logistics risks, this project uses SQL database mining to analyze a local Brazilian logistics provider, **Magist**, to deliver a data-driven partnership recommendation directly to the Eniac CEO and Board of Directors.
 
 ---
 
-## Core Business Questions Answered
+## 🎯 Strategic Alignment Analysis (The Core Dilemma)
+This project maps out raw data against corporate strategy to evaluate whether a premium retailer like Eniac (€540.00 average product price) can find operational synergy within Magist’s broad-market fulfillment network.
 
-### 📦 1. Product Portfolio & Market Penetration
-* Identified the specific categories representing "Tech" products within the marketplace.
-* Calculated the precise volume and percentage that tech products represent relative to total catalog sales.
-* Analyzed customer review patterns to determine if premium, higher-priced tech items maintain high popularity and customer satisfaction.
+### 🔑 Key Data Discoveries & Core Findings
 
-### 👥 2. Seller Dynamics & Revenue Generation
-* Evaluated the total active timeline of data recorded in the platform using month-based differentials.
-* Determined the exact proportion of marketplace sellers specializing in Tech items versus standard consumer products.
-* Developed analytical models to capture total revenue generated and isolated the overall average monthly income generated per seller.
+#### 📦 1. Product Catalog Dilution & Portfolio Mismatch
+* **Volume vs. Exclusivity:** Magist’s network processes a total of **32,951 products**. However, a staggering **88.03%** of those items belong to **Non-Tech** categories. Only **11.97%** are **Tech products**, indicating Magist acts primarily as a broad generalist marketplace rather than a specialized tech hub.
+* **The Premium Pricing Chasm:** While Eniac’s premium, curated tech product inventory carries an average price tag of **€540.00**, Magist's entire tech category averages only **€110.14** (and their total catalog averages €120.65). This represents a steep mismatch in target consumer demographics.
 
-### 🚚 3. Supply Chain & Logistics Performance
-* Computed the exact average time delta between a customer placing an order and physical delivery confirmation.
-* Built a tracking model classifying orders as "on-time" vs. "delayed" relative to customer estimates.
-* Evaluated potential correlations between product characteristics (specifically item weight thresholds) and logistics bottlenecks.
+#### 🚚 2. Operational Delivery Performance
+* **The 12.5-Day Baseline:** SQL queries track a **12.5-day average nationwide delivery time** from order placement to client confirmation.
+* **The Local Highlight Opportunity:** Despite the long nationwide average, qualitative customer reviews frequently highlight localized fast deliveries of **2–3 days** in key zones. Combined with low delay rates and high early success scores, Magist shows a **strong local logistics fulfillment opportunity** to get Eniac into the market fast.
+* **Customer Care Quality:** Magist demonstrates stable, resilient customer satisfaction ratings (+19.8% stability), offering a cultural alignment with Eniac’s premium customer service focus.
 
-### 🗺️ 4. Geographic & Financial Explorations
-* Aggregated gross revenue generation down to specific seller geographic zip codes to find regional performance hubs.
-* Mapped customer satisfaction and review score averages to geographic clusters.
-* Analyzed the distribution and percentage share of customer payment methods (credit cards, vouchers, etc.) preferred across the platform.
-
----
-
-## Repository Structure
-* `magist data dump practice.sql`: The primary production script containing the raw SQL queries, schema calls, and optimization structures used during the analysis.
+#### 🗺️ 3. Targeted Geographic Hubs
+* **Regional Powerhouses:** Aggregating sales metrics across regional infrastructure revealed that Magist's tech distribution and operational strengths are heavily localized within three core metropolitan hubs:
+  1. **São Paulo**
+  2. **Rio de Janeiro**
+  3. **Belo Horizonte**
+* **The Strategic Lever:** Any initial market deployment must leverage this localized operational know-how rather than rolling out blanket nationwide shipping.
 
 ---
 
-## Database Schema & Structure Insights
-This analysis relies heavily on connecting fragmented relational tables. Key structural implementations include:
-* Using `order_items` as a central intersection bridge to link product dimensions to seller files.
-* Leveraging the English translation reference dictionary to standardize local language category titles.
-* Accounting for operational realities (e.g., filtering out unconfirmed/canceled deliveries to isolate successful transactions).
+## ⚠️ High-Level Strategic Risks Identified
+Before signing a standard multi-year contract, the board must account for four major risk vectors revealed during our data deep dive:
+1. **Limited Data Visibility:** Lack of long-term historic tracking data to securely justify a rigid 3-year contract commitment.
+2. **Product Portfolio Mismatch:** Operational friction stemming from a high-volume generalist ecosystem handling delicate luxury Apple products.
+3. **Data Quality & Reporting Inconsistencies:** Potential reporting gaps across non-standard vendor segments.
+4. **Partner Dependency:** Putting Eniac's stellar global brand equity completely in the hands of a localized third-party supply chain.
 
 ---
 
-### How to Use This Project
-1. Ensure a MySQL-compatible database instance is running with the `magist` database schema installed.
-2. Open the `.sql` script in your preferred database GUI (e.g., MySQL Workbench, DBeaver).
-3. Execute individual query blocks sequentially to populate the corresponding analytical results.
+## 🛠️ Technical Toolkit Demonstrated
+* **Relational Database Mining (MySQL):** Wrote multi-table joins, text categorization mapping conditionals, and statistical aggregations to segment Tech vs. Non-Tech performance.
+* **Data Presentation & Slide Design:** Converted technical SQL script outputs into clean, visual infographic-style executive data models for C-suite alignment.
+
+---
+
+## 📂 Repository Structure
+* `magist data dump practice.sql`: Production-ready SQL script containing data extraction, schema joins, and category filter logic.
+* `Eniac_Business_Analysis.pdf`: The finalized pitch deck presented by *The Missing Semicolons* detailing product mix donut charts, geographic hub heat maps, and the final corporate action plan.
